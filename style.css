@@ -199,13 +199,12 @@ header {
   margin: 60px 0;
 }
 
-.questions-div {
+.faq {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 1px;
   align-items: center;
   justify-content: center;
-  margin-bottom: 65px;
 }
 
 .questions h1 {
@@ -215,13 +214,28 @@ header {
 }
 
 .questions .item {
-  font-size: 20px;
+  font-size: 28px;
+  margin-top: 8px;
   padding: 25px 30px;
-  width: 50%;
+  width: 70%;
   background-color: rgb(44, 44, 44);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  cursor: pointer;
+}
+
+.answer {
+  max-height: 0;
+  overflow: hidden;
+}
+
+.faq.active .answer {
+  max-height: 300px;
+  font-size: 26px;
+  padding: 25px 30px;
+  width: 70%;
+  background-color: rgb(44, 44, 44);
 }
 
 /* QUESTIONS FORM */
@@ -239,5 +253,17 @@ header {
     flex-direction: column;
     gap: 15px;
     margin: 30px 0;
+  }
+}
+
+@media (min-width: 1600px) {
+  .questions .item {
+    width: 45%;
+  }
+  .questions .answer {
+    width: 45%;
+  }
+  .faq.active .answer {
+    width: 45%;
   }
 }
